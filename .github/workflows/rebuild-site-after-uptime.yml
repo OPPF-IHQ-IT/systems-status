@@ -1,0 +1,22 @@
+name: Rebuild Site After Uptime CI
+
+on:
+  workflow_run:
+    workflows: ["Uptime CI"]
+    types: [completed]
+
+jobs:
+  trigger-site-rebuild:
+    name: Trigger static site rebuild
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dispatch Static Site CI
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GH_PAT || github.token }}
+          script: |
+            await github.rest.repos.createDispatchEvent({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              event_type: 'static_site',
+            });
