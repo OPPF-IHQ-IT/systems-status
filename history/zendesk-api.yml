@@ -1,7 +1,7 @@
 url: https://$OBSERVABILITY_HOST/health/zendesk/api
 status: up
 code: 200
-responseTime: 101
-lastUpdated: 2026-04-29T22:12:12.841Z
+responseTime: 102
+lastUpdated: 2026-04-29T23:44:22.451Z
 startTime: 2026-04-29T15:52:32.538Z
 generator: Upptime <https://github.com/upptime/upptime>
