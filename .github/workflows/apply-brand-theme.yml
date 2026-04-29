@@ -1,0 +1,89 @@
+name: Apply Brand Theme
+
+on:
+  workflow_run:
+    workflows: ["Static Site CI"]
+    types: [completed]
+  workflow_dispatch:
+
+jobs:
+  theme:
+    name: Patch theme CSS
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          token: ${{ secrets.GH_PAT || github.token }}
+
+      - name: Apply OPPF brand theme
+        run: |
+          cat > themes/light.css << 'EOF'
+          :root {
+            --body-background-color: #f8f7fc;
+            --body-text-color: #1a1a2e;
+            --card-background-color: #ffffff;
+            --nav-background-color: #2E1E4A;
+            --nav-border-bottom-color: #FCBA00;
+            --nav-current-border-bottom-color: #FCBA00;
+            --card-border-color: #e5e0f0;
+            --down-border-left-color: #dc2626;
+            --down-background-color: #fee2e2;
+            --degraded-border-left-color: #d97706;
+            --up-border-left-color: #16a34a;
+            --tag-color: #ffffff;
+            --tag-up-background-color: #16a34a;
+            --tag-down-background-color: #dc2626;
+            --tag-degraded-background-color: #d97706;
+            --change-background-color: #FCBA00;
+            --error-button-border-color: #4338ca;
+            --error-button-background-color: #4f46e5;
+            --error-button-color: #ffffff;
+            --submit-button-border-color: #4338ca;
+            --submit-button-background-color: #4f46e5;
+            --submit-button-color: #ffffff;
+            --graph-opacity: 1;
+            --graph-filter: none;
+          }
+          nav { color: #ffffff; }
+          nav a { color: #FCBA00 !important; }
+          EOF
+
+          cat > themes/dark.css << 'EOF'
+          :root {
+            --body-background-color: #0f0a1e;
+            --body-text-color: #f0eeff;
+            --card-background-color: #1a1030;
+            --nav-background-color: #2E1E4A;
+            --nav-border-bottom-color: #FCBA00;
+            --nav-current-border-bottom-color: #FCBA00;
+            --card-border-color: #3d2f60;
+            --down-border-left-color: #ef4444;
+            --down-background-color: #3b1219;
+            --degraded-border-left-color: #f59e0b;
+            --up-border-left-color: #22c55e;
+            --tag-color: #ffffff;
+            --tag-up-background-color: #16a34a;
+            --tag-down-background-color: #dc2626;
+            --tag-degraded-background-color: #d97706;
+            --change-background-color: #FCBA00;
+            --error-button-border-color: #4338ca;
+            --error-button-background-color: #4f46e5;
+            --error-button-color: #ffffff;
+            --submit-button-border-color: #4338ca;
+            --submit-button-background-color: #4f46e5;
+            --submit-button-color: #ffffff;
+            --graph-opacity: 0.85;
+            --graph-filter: none;
+          }
+          nav { color: #ffffff; }
+          nav a { color: #FCBA00 !important; }
+          EOF
+
+      - name: Commit and push
+        run: |
+          git config user.name "Upptime Bot"
+          git config user.email "73812536+upptime-bot@users.noreply.github.com"
+          git add themes/light.css themes/dark.css
+          git diff --cached --quiet || git commit -m "Apply OPPF brand theme [skip ci]"
+          git push
