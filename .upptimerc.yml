@@ -50,6 +50,7 @@ assignees:
 status-website:
   cname: status.wrmj.io
   name: Fraternity IT Service Status
+  logoUrl: https://oppf.org/wp-content/uploads/oppf-shield-web-2.png
   introTitle: "Fraternity IT Service Status"
   introMessage: "Current availability and service health for fraternity IT systems, iMIS reports, support operations, and member-facing platforms."
   navbar:
@@ -57,6 +58,13 @@ status-website:
       href: /
     - title: Support
       href: mailto:it-support@wrmj.io
+  customCss: |
+    .header { background: #1e1b4b !important; }
+    .header nav a, .header .logo-text { color: #fbbf24 !important; }
+    h1 { color: #1e1b4b; }
+    .pill-good { background: #16a34a !important; }
+    .pill-degraded { background: #d97706 !important; }
+    .pill-bad { background: #dc2626 !important; }
 
 # Required GitHub Actions secrets for this repo:
 #   OBSERVABILITY_HOST  — hostname of the observability bridge (e.g. observability.wrmj.io)
