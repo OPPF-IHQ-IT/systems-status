@@ -59,21 +59,26 @@ status-website:
     - title: Support
       href: mailto:it-support@wrmj.io
   customCss: |
-    body { background: #f8f7fc !important; color: #222 !important; }
-    .header { background: #2E1E4A !important; border-bottom: 3px solid #FCBA00 !important; }
-    .header a, .header nav a { color: #FCBA00 !important; }
-    .header .logo-text { color: #ffffff !important; font-weight: 600 !important; }
-    h1 { color: #2E1E4A !important; }
-    h2 { color: #4b307b !important; }
-    a { color: #4b307b !important; }
-    a:hover { color: #2E1E4A !important; }
-    .status-page { background: #f8f7fc !important; }
-    .card { background: #ffffff !important; border: 1px solid #e5e0f0 !important; }
-    .pill-good, [class*="badge"][class*="up"] { background: #16a34a !important; }
-    .pill-degraded, [class*="badge"][class*="degraded"] { background: #d97706 !important; }
-    .pill-bad, [class*="badge"][class*="down"] { background: #dc2626 !important; }
-    footer { background: #2E1E4A !important; color: #e5e0f0 !important; }
-    footer a { color: #FCBA00 !important; }
+    :root {
+      --body-background-color: #f8f7fc;
+      --body-text-color: #1a1a2e;
+      --card-background-color: #ffffff;
+      --card-border-color: #e5e0f0;
+      --nav-background-color: #2E1E4A;
+      --nav-border-bottom-color: #FCBA00;
+      --nav-current-border-bottom-color: #FCBA00;
+      --up-border-left-color: #16a34a;
+      --tag-up-background-color: #16a34a;
+      --tag-color: #ffffff;
+      --down-border-left-color: #dc2626;
+      --down-background-color: #fee2e2;
+      --tag-down-background-color: #dc2626;
+      --degraded-border-left-color: #d97706;
+      --tag-degraded-background-color: #d97706;
+      --change-background-color: #FCBA00;
+    }
+    nav a { color: #FCBA00 !important; }
+    nav .logo div { color: #ffffff !important; }
 
 # Required GitHub Actions secrets for this repo:
 #   OBSERVABILITY_HOST  — hostname of the observability bridge (e.g. observability.wrmj.io)
