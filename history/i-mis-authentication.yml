@@ -1,7 +1,7 @@
 url: https://$OBSERVABILITY_HOST/health/imis/auth
 status: up
 code: 200
-responseTime: 957
-lastUpdated: 2026-04-29T22:12:01.956Z
+responseTime: 493
+lastUpdated: 2026-04-29T23:44:21.278Z
 startTime: 2026-04-29T15:52:23.297Z
 generator: Upptime <https://github.com/upptime/upptime>
