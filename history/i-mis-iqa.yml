@@ -1,7 +1,7 @@
 url: https://$OBSERVABILITY_HOST/health/imis/iqa
 status: up
 code: 200
-responseTime: 80
-lastUpdated: 2026-05-07T23:44:21.004Z
+responseTime: 49
+lastUpdated: 2026-05-08T23:46:24.500Z
 startTime: 2026-04-29T15:52:25.684Z
 generator: Upptime <https://github.com/upptime/upptime>
