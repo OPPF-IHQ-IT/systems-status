@@ -1,7 +1,7 @@
 url: https://$OBSERVABILITY_HOST/health/imis/reports/financial-summary
 status: up
 code: 200
-responseTime: 106
-lastUpdated: 2026-05-12T23:51:14.213Z
+responseTime: 68
+lastUpdated: 2026-05-13T23:49:42.716Z
 startTime: 2026-04-29T15:52:30.313Z
 generator: Upptime <https://github.com/upptime/upptime>
