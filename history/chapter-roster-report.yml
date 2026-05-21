@@ -1,7 +1,7 @@
 url: https://$OBSERVABILITY_HOST/health/imis/reports/chapter-roster
 status: up
 code: 200
-responseTime: 41
-lastUpdated: 2026-05-21T00:00:55.743Z
+responseTime: 67
+lastUpdated: 2026-05-21T23:52:00.678Z
 startTime: 2026-04-29T15:52:28.003Z
 generator: Upptime <https://github.com/upptime/upptime>
