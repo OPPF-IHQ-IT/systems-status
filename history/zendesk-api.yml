@@ -1,7 +1,7 @@
 url: https://$OBSERVABILITY_HOST/health/zendesk/api
 status: down
 code: 503
-responseTime: 70
-lastUpdated: 2026-05-21T23:52:01.527Z
+responseTime: 39
+lastUpdated: 2026-05-22T23:58:03.591Z
 startTime: 2026-04-29T15:52:32.538Z
 generator: Upptime <https://github.com/upptime/upptime>
