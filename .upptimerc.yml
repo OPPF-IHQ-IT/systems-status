@@ -4,45 +4,17 @@ repo: systems-status
 user-agent: fraternity-it-status
 
 sites:
-  - name: iMIS Authentication
-    url: https://$OBSERVABILITY_HOST/health/imis/auth
-    expectedStatusCodes:
-      - 200
-    maxResponseTime: 15000
-    headers:
-      - "Authorization: Bearer $UPPTIME_HEALTH_TOKEN"
-
-  - name: iMIS IQA
-    url: https://$OBSERVABILITY_HOST/health/imis/iqa
-    expectedStatusCodes:
-      - 200
-    maxResponseTime: 15000
-    headers:
-      - "Authorization: Bearer $UPPTIME_HEALTH_TOKEN"
-
-  - name: Chapter Roster Report
-    url: https://$OBSERVABILITY_HOST/health/imis/reports/chapter-roster
-    expectedStatusCodes:
-      - 200
-    maxResponseTime: 20000
-    headers:
-      - "Authorization: Bearer $UPPTIME_HEALTH_TOKEN"
-
-  - name: Financial Summary Report
-    url: https://$OBSERVABILITY_HOST/health/imis/reports/financial-summary
-    expectedStatusCodes:
-      - 200
-    maxResponseTime: 20000
-    headers:
-      - "Authorization: Bearer $UPPTIME_HEALTH_TOKEN"
-
-  - name: Zendesk API
-    url: https://$OBSERVABILITY_HOST/health/zendesk/api
+  - name: Conclave Dashboard
+    url: https://85thconclave-dashboard.oppf.org/healthz.php
     expectedStatusCodes:
       - 200
     maxResponseTime: 10000
-    headers:
-      - "Authorization: Bearer $UPPTIME_HEALTH_TOKEN"
+
+  - name: Membership API v2
+    url: https://membership.oppf.org/healthz
+    expectedStatusCodes:
+      - 200
+    maxResponseTime: 10000
 
 assignees:
   - willmadison
@@ -52,7 +24,7 @@ status-website:
   name: Fraternity IT Service Status
   logoUrl: https://oppf.org/wp-content/uploads/oppf-shield-web-2.png
   introTitle: "Fraternity IT Service Status"
-  introMessage: "Current availability and service health for fraternity IT systems, iMIS reports, support operations, and member-facing platforms."
+  introMessage: "Current availability and service health for fraternity member-facing platforms and APIs."
   navbar:
     - title: Status
       href: /
@@ -79,7 +51,3 @@ status-website:
     }
     nav a { color: #FCBA00 !important; }
     nav .logo div { color: #ffffff !important; }
-
-# Required GitHub Actions secrets for this repo:
-#   OBSERVABILITY_HOST  — hostname of the observability bridge (e.g. observability.wrmj.io)
-#   UPPTIME_HEALTH_TOKEN — bearer token matching the bridge's UPPTIME_HEALTH_TOKEN secret
