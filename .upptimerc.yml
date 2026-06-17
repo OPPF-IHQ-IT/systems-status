@@ -16,6 +16,36 @@ sites:
       - 200
     maxResponseTime: 10000
 
+  # iMIS-hosted: an unauthenticated request 302-redirects to the login page, which is the healthy "up" response.
+  - name: Member Portal
+    url: https://members.oppf.org
+    expectedStatusCodes:
+      - 200
+      - 302
+    maxResponseTime: 10000
+
+  # www 301-redirects to the canonical apex (oppf.org).
+  - name: Public Website
+    url: https://www.oppf.org
+    expectedStatusCodes:
+      - 200
+      - 301
+    maxResponseTime: 10000
+
+  # iMIS-hosted: 302-redirects to the login page when unauthenticated.
+  - name: Special Events Checklist
+    url: https://sec.oppf.org
+    expectedStatusCodes:
+      - 200
+      - 302
+    maxResponseTime: 10000
+
+  - name: Recommendations Hub
+    url: https://recommendations.oppf.org/api/health
+    expectedStatusCodes:
+      - 200
+    maxResponseTime: 10000
+
 assignees:
   - willmadison
 
