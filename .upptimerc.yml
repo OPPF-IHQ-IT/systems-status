@@ -59,7 +59,7 @@ status-website:
     - title: Status
       href: /
     - title: Support
-      href: mailto:it-support@wrmj.io
+      href: mailto:support@oppf.org
   customCss: |
     :root {
       --body-background-color: #f8f7fc;
