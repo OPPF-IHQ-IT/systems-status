@@ -58,18 +58,20 @@
     "url": "https://www.oppf.org",
     "icon": "https://icons.duckduckgo.com/ip3/www.oppf.org.ico",
     "slug": "public-website",
-    "status": "up",
+    "status": "degraded",
     "uptime": "100.00%",
-    "uptimeDay": "100.00%",
+    "uptimeDay": "99.99%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 2001,
-    "timeDay": 1980,
-    "timeWeek": 2001,
-    "timeMonth": 2001,
-    "timeYear": 2001,
-    "dailyMinutesDown": {}
+    "time": 3241,
+    "timeDay": 6953,
+    "timeWeek": 3241,
+    "timeMonth": 3241,
+    "timeYear": 3241,
+    "dailyMinutesDown": {
+      "2026-06-23": 0
+    }
   },
   {
     "name": "Special Events Checklist",
