@@ -13,7 +13,7 @@
     "time": 277,
     "timeDay": 0,
     "timeWeek": 0,
-    "timeMonth": 225,
+    "timeMonth": 227,
     "timeYear": 277,
     "dailyMinutesDown": {}
   },
@@ -31,7 +31,7 @@
     "time": 303,
     "timeDay": 0,
     "timeWeek": 0,
-    "timeMonth": 390,
+    "timeMonth": 404,
     "timeYear": 303,
     "dailyMinutesDown": {}
   },
@@ -49,7 +49,7 @@
     "time": 1050,
     "timeDay": 0,
     "timeWeek": 0,
-    "timeMonth": 978,
+    "timeMonth": 1004,
     "timeYear": 1050,
     "dailyMinutesDown": {}
   },
@@ -67,7 +67,7 @@
     "time": 3087,
     "timeDay": 0,
     "timeWeek": 0,
-    "timeMonth": 2489,
+    "timeMonth": 2382,
     "timeYear": 3087,
     "dailyMinutesDown": {
       "2026-06-23": 126,
@@ -81,15 +81,15 @@
     "icon": "https://icons.duckduckgo.com/ip3/sec.oppf.org.ico",
     "slug": "special-events-checklist",
     "status": "up",
-    "uptime": "97.92%",
+    "uptime": "97.94%",
     "uptimeDay": "100.00%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "94.91%",
-    "uptimeYear": "97.92%",
+    "uptimeYear": "97.94%",
     "time": 984,
     "timeDay": 0,
     "timeWeek": 0,
-    "timeMonth": 741,
+    "timeMonth": 750,
     "timeYear": 984,
     "dailyMinutesDown": {
       "2026-07-28": 162,
@@ -114,7 +114,7 @@
     "time": 288,
     "timeDay": 0,
     "timeWeek": 0,
-    "timeMonth": 510,
+    "timeMonth": 530,
     "timeYear": 288,
     "dailyMinutesDown": {
       "2026-08-26": 58
