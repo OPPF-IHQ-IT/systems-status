@@ -80,17 +80,17 @@
     "url": "https://sec.oppf.org",
     "icon": "https://icons.duckduckgo.com/ip3/sec.oppf.org.ico",
     "slug": "special-events-checklist",
-    "status": "up",
-    "uptime": "97.13%",
-    "uptimeDay": "100.00%",
+    "status": "down",
+    "uptime": "97.14%",
+    "uptimeDay": "99.99%",
     "uptimeWeek": "81.80%",
     "uptimeMonth": "95.81%",
-    "uptimeYear": "97.13%",
-    "time": 1026,
-    "timeDay": 2062,
-    "timeWeek": 1285,
-    "timeMonth": 1285,
-    "timeYear": 1026,
+    "uptimeYear": "97.14%",
+    "time": 1020,
+    "timeDay": 1220,
+    "timeWeek": 1225,
+    "timeMonth": 1225,
+    "timeYear": 1020,
     "dailyMinutesDown": {
       "2026-07-28": 162,
       "2026-07-29": 64,
@@ -100,7 +100,8 @@
       "2026-08-30": 1440,
       "2026-10-03": 1007,
       "2026-10-02": 56,
-      "2026-10-04": 771
+      "2026-10-04": 771,
+      "2026-10-07": 0
     }
   },
   {
