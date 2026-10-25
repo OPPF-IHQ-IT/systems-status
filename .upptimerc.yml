@@ -16,6 +16,15 @@ sites:
       - 200
     maxResponseTime: 10000
 
+  # Whether iMIS answers the API right now: one small uncached query, 503 when iMIS doesn't respond.
+  # Kept separate from Membership API v2 so an iMIS outage doesn't read as the API being down, and
+  # unlike Member Portal it goes red when the site answers but data calls fail (e.g. the 9/29 lockout).
+  - name: Membership Data (iMIS)
+    url: https://membership.oppf.org/readyz/imis
+    expectedStatusCodes:
+      - 200
+    maxResponseTime: 10000
+
   # iMIS-hosted: an unauthenticated request 302-redirects to the login page, which is the healthy "up" response.
   - name: Member Portal
     url: https://members.oppf.org
