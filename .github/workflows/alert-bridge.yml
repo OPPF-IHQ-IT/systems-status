@@ -1,0 +1,70 @@
+# Forwards Upptime outages to the on-call Signal group.
+#
+# Not an Upptime template file (those are regenerated weekly) -- this one is ours.
+# Upptime opens a `status`-labelled issue when a site goes down and closes it when the
+# site recovers; this turns those two events into a Fired / Resolved alert.
+#
+# The payload mimics Azure Monitor's common alert schema so the existing
+# logic-oppf-signal-alerter Logic App (OPPF-IHQ-IT/infra, terraform/observability)
+# delivers it unchanged. SIGNAL_ALERTER_URL is that Logic App's trigger callback URL
+# (infra output `signal_logic_app_callback_url`); it embeds a SAS signature, so treat
+# it as a secret.
+#
+# Only "🛑 ... is down" issues alert. "⚠️ ... has degraded performance" issues are
+# skipped on purpose: slow-but-up shouldn't page.
+#
+# Upptime opens issues with GH_PAT, which is what lets them trigger this workflow
+# (events created by GITHUB_TOKEN don't trigger workflows).
+
+name: Alert Bridge
+on:
+  issues:
+    types: [opened, closed]
+
+permissions: {}
+
+jobs:
+  notify:
+    name: Notify on-call
+    if: contains(github.event.issue.labels.*.name, 'status') && startsWith(github.event.issue.title, '🛑')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send to Signal alerter
+        env:
+          SIGNAL_ALERTER_URL: ${{ secrets.SIGNAL_ALERTER_URL }}
+          ACTION: ${{ github.event.action }}
+          TITLE: ${{ github.event.issue.title }}
+          BODY: ${{ github.event.issue.body }}
+          ISSUE_URL: ${{ github.event.issue.html_url }}
+        run: |
+          if [ -z "$SIGNAL_ALERTER_URL" ]; then
+            echo "::error::SIGNAL_ALERTER_URL secret is not set"
+            exit 1
+          fi
+
+          site="${TITLE#🛑 }"
+          site="${site% is down}"
+          url="$(printf '%s' "$BODY" | grep -oE '\(https?://[^) ]+\) was' | head -1 | sed -E 's/^\((.*)\) was$/\1/' || true)"
+          code="$(printf '%s' "$BODY" | grep -oE 'HTTP code: [0-9]+' | head -1 | grep -oE '[0-9]+' || true)"
+
+          if [ "$ACTION" = "opened" ]; then
+            condition="Fired"
+            description="$site is down${url:+ ($url)}${code:+, HTTP $code}. $ISSUE_URL"
+          else
+            condition="Resolved"
+            description="$site is back up${url:+ ($url)}. $ISSUE_URL"
+          fi
+
+          jq -n \
+            --arg rule "upptime: $site" \
+            --arg condition "$condition" \
+            --arg description "$description" \
+            '{schemaId: "azureMonitorCommonAlertSchema",
+              data: {essentials: {severity: "Sev1", alertRule: $rule,
+                                  monitorCondition: $condition, description: $description}}}' \
+            > payload.json
+
+          curl --fail-with-body --silent --show-error --max-time 30 \
+            -H 'Content-Type: application/json' \
+            --data @payload.json \
+            "$SIGNAL_ALERTER_URL"
