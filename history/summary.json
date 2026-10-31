@@ -13,7 +13,7 @@
     "time": 282,
     "timeDay": 175,
     "timeWeek": 250,
-    "timeMonth": 292,
+    "timeMonth": 293,
     "timeYear": 282,
     "dailyMinutesDown": {}
   },
@@ -41,11 +41,11 @@
     "icon": "https://icons.duckduckgo.com/ip3/membership.oppf.org.ico",
     "slug": "membership-data-i-mis",
     "status": "up",
-    "uptime": "98.95%",
+    "uptime": "99.00%",
     "uptimeDay": "100.00%",
-    "uptimeWeek": "98.95%",
-    "uptimeMonth": "98.95%",
-    "uptimeYear": "98.95%",
+    "uptimeWeek": "99.00%",
+    "uptimeMonth": "99.00%",
+    "uptimeYear": "99.00%",
     "time": 291,
     "timeDay": 103,
     "timeWeek": 291,
@@ -69,7 +69,7 @@
     "time": 1064,
     "timeDay": 935,
     "timeWeek": 1004,
-    "timeMonth": 1097,
+    "timeMonth": 1103,
     "timeYear": 1064,
     "dailyMinutesDown": {
       "2026-10-28": 87
@@ -89,7 +89,7 @@
     "time": 3405,
     "timeDay": 1991,
     "timeWeek": 6023,
-    "timeMonth": 4129,
+    "timeMonth": 4189,
     "timeYear": 3405,
     "dailyMinutesDown": {
       "2026-06-23": 126,
@@ -104,17 +104,17 @@
     "url": "https://sec.oppf.org",
     "icon": "https://icons.duckduckgo.com/ip3/sec.oppf.org.ico",
     "slug": "special-events-checklist",
-    "status": "down",
-    "uptime": "97.38%",
-    "uptimeDay": "99.99%",
-    "uptimeWeek": "99.14%",
-    "uptimeMonth": "94.62%",
-    "uptimeYear": "97.38%",
-    "time": 1037,
-    "timeDay": 753,
-    "timeWeek": 1052,
-    "timeMonth": 1144,
-    "timeYear": 1037,
+    "status": "up",
+    "uptime": "97.19%",
+    "uptimeDay": "73.80%",
+    "uptimeWeek": "95.40%",
+    "uptimeMonth": "93.76%",
+    "uptimeYear": "97.19%",
+    "time": 1035,
+    "timeDay": 795,
+    "timeWeek": 1035,
+    "timeMonth": 1069,
+    "timeYear": 1035,
     "dailyMinutesDown": {
       "2026-07-28": 162,
       "2026-07-29": 64,
@@ -127,7 +127,7 @@
       "2026-10-04": 771,
       "2026-10-07": 434,
       "2026-10-28": 86,
-      "2026-10-31": 0
+      "2026-10-31": 377
     }
   },
   {
@@ -144,7 +144,7 @@
     "time": 467,
     "timeDay": 186,
     "timeWeek": 1050,
-    "timeMonth": 905,
+    "timeMonth": 925,
     "timeYear": 467,
     "dailyMinutesDown": {
       "2026-08-26": 58
