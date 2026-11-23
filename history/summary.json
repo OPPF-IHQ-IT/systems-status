@@ -80,17 +80,17 @@
     "url": "https://www.oppf.org",
     "icon": "https://icons.duckduckgo.com/ip3/www.oppf.org.ico",
     "slug": "public-website",
-    "status": "degraded",
+    "status": "up",
     "uptime": "99.42%",
-    "uptimeDay": "99.99%",
-    "uptimeWeek": "100.00%",
-    "uptimeMonth": "98.28%",
+    "uptimeDay": "99.71%",
+    "uptimeWeek": "99.96%",
+    "uptimeMonth": "98.27%",
     "uptimeYear": "99.42%",
-    "time": 4022,
-    "timeDay": 12879,
-    "timeWeek": 9116,
-    "timeMonth": 6142,
-    "timeYear": 4022,
+    "time": 4018,
+    "timeDay": 10981,
+    "timeWeek": 8734,
+    "timeMonth": 6078,
+    "timeYear": 4018,
     "dailyMinutesDown": {
       "2026-06-23": 126,
       "2026-07-18": 93,
@@ -98,7 +98,7 @@
       "2026-10-20": 294,
       "2026-10-27": 340,
       "2026-11-14": 414,
-      "2026-11-23": 0
+      "2026-11-23": 4
     }
   },
   {
